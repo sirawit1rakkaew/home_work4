@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @user.name %></h1>
+Email: <%= @user.email %>
+
+<h2>Microposts</h2>
+<h3>Create a new micropost</h3>
+<%= form_with model: @micropost, url: microposts_path do |f| %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+
+  <div>
+    <%= f.label :content, "Content", style: "display: block" %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div>
+    <%= f.submit "Create Micropost" %>
+  </div>
+<% end %>
+
+<% if @user.microposts.any? %>
+  <ol class="microposts">
+    <% @user.microposts.each do |micropost| %>
+      <li><%= micropost.content %></li>
+    <% end %>
+  </ol>
+<% else %>
+  <p>No microposts yet.</p>
+<% end %>
+
+<%= link_to "Edit", edit_user_path(@user) %> |
+<%= link_to "Back", users_path %>

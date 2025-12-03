@@ -1,0 +1,8 @@
+{
+  "name": "Rails 7 Toy App (Fixed)",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.2-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  "postCreateCommand": "gem update --system && gem install rails -v 7.1.4 && bundle config set --local without 'production'"
+}
