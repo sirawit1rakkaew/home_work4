@@ -33,3 +33,28 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Bundler lock file (optional - include for reproducible builds)
+# Gemfile.lock
+
+# Ruby version manager
+.rbenv-version
+.ruby-version
+.rvmrc
+
+# Compiled gems
+*.gem
+
+# Temporary files
+*.tmp
+*.bak
+
